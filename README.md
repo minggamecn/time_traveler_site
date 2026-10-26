@@ -37,9 +37,12 @@ favicon.png, apple-touch-icon.png   Browser icons
 
 ## Keeping the policies true
 
-The policies describe the release build as of 2026-10-24: offline only, no account, no ads, no
-analytics or crash reporting, saves in app-private storage (Android Auto Backup on), and Google
-Play Billing as the only network use (`INTERNET` and `ACCESS_NETWORK_STATE` permissions). Update
+The policies describe the release build as of 2026-10-26 (1.4, in closed testing): offline only,
+no account, no ads, no analytics or crash reporting, saves in app-private storage (Android Auto
+Backup on), and Google Play Billing as the only network use (`INTERNET`, `ACCESS_NETWORK_STATE` and
+`com.android.vending.BILLING` permissions). The billing library (8.0.0) brings in Google's
+`datatransport` services, which may upload the library's own usage logs to Google; privacy section 5
+says so. Recheck the merged release manifest when the billing library is upgraded. Update
 the privacy policy, terms, deletion page and support FAQ **before** shipping any build that
 changes this, in particular:
 
